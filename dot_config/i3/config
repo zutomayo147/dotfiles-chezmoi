@@ -1,0 +1,406 @@
+# i3 config file (v4)
+set $mod Mod4
+
+# set default desktop layout (default is tiling)
+# workspace_layout tabbed <stacking|tabbed>
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+
+default_floating_border             normal
+client.focused                     #4c7899 #285577 #ffffff #2e9ef4   #285577
+
+#mouse_warping none
+#show_marks no
+#Hide borders
+hide_edge_borders                   smart
+
+# sway
+# input type:touchpad {
+#     tap enabled
+#     natural_scroll disable
+# }
+# input * {
+#     xkb_layout "jp,us"
+# }
+    # xkb_variant "colemak,,typewriter"
+    # xkb_options "grp:win_space_toggle"
+
+no_focus [window_role="pop-up"]
+# change borders
+# bindsym $mod+u border none
+
+# hide window title
+default_border pixel 0
+default_floating_border pixel 0
+# exec_always ~/my_script.sh
+
+# title_align left|center|right
+title_align center
+
+# font pango:HackGenNerd Italic 1
+font pango:JetBrains Mono Italic 1
+# Use Mouse+$mod to drag floating windows
+# floating_modifier $mod+Shift
+
+bindsym $mod+Return exec wezterm
+
+bindsym $mod+Tab kill
+bindsym $mod+End exec --no-startup-id xset dpms force off
+
+# bindsym $mod+x [urgent=latest] focus
+# bindsym $mod+x --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+x --release exec "killall dunst;"
+
+# start program launcher
+bindsym $mod+a exec --no-startup-id sh ~/ghq/github.com/zutomayo147/dotfiles/cp/rofi/launcher.sh
+
+# launch categorized menu
+
+################################################################################################
+## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
+################################################################################################
+
+# Press $mod+o followed by either f, t, Escape or Return to launch firefox,
+# thunderbird or return to the default mode, respectively.
+# set $mode_launcher Launch: [f]irefox [t]hunderbird
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym g exec google-chrome-stable
+    bindsym b exec brave
+    bindsym f exec firefox-beta
+    bindsym t exec thunderbird
+    bindsym v exec vlc
+    bindsym h exec hackmd-desktop
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+################################################################################################
+
+# Screen brightness controls
+# special key mapping
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+bindsym XF86AudioRaiseVolume exec amixer -c0 sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -c0 sset Master 5%-
+bindsym XF86AudioMute exec amixer -c0 -D pulse set Master 1+ toggle
+
+# Start Applications
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+# bindsym $mod+F2 exec google-chrome-stable
+
+# exec --no-startup-id compton -cbm 0.75
+# exec --no-startup-id picom -cbmGC 0.75 --config /home/sin/.config/picom.conf
+bindsym Print exec gnome-screenshot -i
+
+# for spectre
+bindsym Ctrl+End exec xinput disable 'SYNA329A:00 06CB:CD4F Touchpad'
+# bindsym a exec xinput disable 'SYNA329A:00 06CB:CD4F Touchpad'
+# bindsym Ctrl+Prior exec xinput enable 'SYNA329A:00 06CB:CD4F Touchpad'
+bindsym Ctrl+Home exec xinput enable 'SYNA329A:00 06CB:CD4F Touchpad'
+
+focus_follows_mouse yes
+# mouse_warping output|none
+mouse_warping output
+
+bindsym button1 nop
+
+# popup_during_fullscreen smart|ignore|leave_fullscreen
+popup_during_fullscreen smart
+
+# focus_wrapping yes|no|force|workspace
+focus_wrapping yes
+# focus_wrapping no
+
+# alert new link with red
+focus_on_window_activation smart
+
+# force_xinerama yes|no
+# force_xinerama no
+
+# show_marks yes|no
+show_marks yes
+
+# Get me to the next open VIM instance
+# bindsym $mod+a [class="urxvt" title="VIM"] focus
+
+# read 1 character and mark the current window with this character
+# bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# # read 1 character and go to the window with the character
+# bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+
+# give the focused window a prefix
+# bindsym $mod+p title_format "Important | %title"
+
+# # print all window titles bold
+# for_window [class=".*"] title_format "<b>%title</b>"
+
+# # enable floating mode and move container to workspace 4
+# for_window [class="^evil-app$"] floating enable, move container to workspace 4
+
+# # move all floating windows to the scratchpad
+# bindsym $mod+x [floating] move scratchpad
+
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+space workspace back_and_forth
+# bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+Right split h
+bindsym $mod+Down split v
+# bindsym $mod+q split toggle
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+#bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
+#bindsym $mod+p focus parent
+
+# move the currently focused window to the scratchpad
+# bindsym $mod+Shift+minus move scratchpad
+
+# Workspace names
+
+# to display names or symbols instead of plain workspace numbers you can use
+# something like: set $ws1 1:mail
+#                 set $ws2 2:
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# Open applications on specific workspaces
+# assign [class="Thunderbird"] $ws1
+# assign [class="alacritty"] $ws1
+assign [class="wezterm"] $ws1
+assign [class="Thunderbird"] $ws2
+assign [class="Evince"] $ws2
+# assign [class="Eog"] $ws2
+# assign [class="vlc"] $ws2
+assign [class="smplayer"] $ws2
+assign [class="vlc"] $ws2
+# assign [class="smplayer"] $ws1
+assign [class="code-oss"] $ws2
+assign [class="libreoffice-impress"] $ws2
+assign [class="libreoffice-writer"] $ws2
+assign [class="libreoffice"] $ws2
+# assign [class="brave"] $ws1
+
+assign [class="Org.gnome.Nautilus"] $ws3
+assign [class="Slack"] $ws3
+assign [class="zoom"] $ws3
+# assign [class="teams-for-linux"] $ws3
+assign [class="Timeshift-gtk"] $ws3
+assign [class="Wire"] $ws3
+
+# Open specific applications in floating mode
+# for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Clipgrab"] floating enable
+for_window [class="Tor Browser"] floating enable
+for_window [class="GParted"] floating enable border normal
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable
+for_window [class="Oblogout"] fullscreen enable
+# for_window [class="Pavucontrol"] floating enable
+# for_window [class="(?i)virtualbox"] floating enable border normal
+
+# for_window [title="^Android Emulator*"] floating enable
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Logout' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id i3-msg exit
+# bindsym $mode+q exec --no-startup-id sh ~/deepl-clip/app.sh
+
+# Resize window (you can also use the mouse for that)
+# bindsym $mod+r mode "resize"
+# mode "resize" {
+#         # These bindings trigger as soon as you enter the resize mode
+#         # Pressing left will shrink the window’s width.
+#         # Pressing right will grow the window’s width.
+#         # Pressing up will shrink the window’s height.
+#         # Pressing down will grow the window’s height.
+#         bindsym j resize shrink height 5 px or 5 ppt
+#         bindsym k resize grow height 5 px or 5 ppt
+#         bindsym l resize shrink width 5 px or 5 ppt
+#         bindsym h resize grow width 5 px or 5 ppt
+#
+#         # same bindings, but for the arrow keys
+#         bindsym Left resize grow width 5 px or 5 ppt
+#         bindsym Down resize shrink height 5 px or 5 ppt
+#         bindsym Up resize grow height 5 px or 5 ppt
+#         bindsym Right resize shrink width 5 px or 5 ppt
+#
+#         # exit resize mode: Enter or Escape
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+
+# Autostart applications
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id clipit
+exec --no-startup-id brave
+# exec --no-startup-id thunderbird &
+exec --no-startup-id /usr/bin/octopi-notifier
+exec --no-startup-id fcitx
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id dunst
+
+# key repeat
+exec --no-startup-id xset r rate 195 62
+exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
+exec --no-startup-id imwheel
+# exec --no-startup-id signal-desktop --start-in-tray
+# exec --no-startup-id wire-desktop --minimize
+exec --no-startup-id wire-desktop --hidden
+exec --no-startup-id slack %U -u
+
+exec --no-startup-id sleep 2.0 && wezterm
+exec --no-startup-id pulseaudio --start
+
+# exec --no-startup-id libinput-gestures-setup start
+
+# Alsamixer
+# c0  = cardNumber
+exec --no-startup-id amixer set Master 80%
+exec --no-startup-id amixer set Speaker 60%
+
+exec --no-startup-id xinput --set-prop 13 'libinput Accel Speed' 0.5
+exec --no-startup-id xinput --set-prop 11 'libinput Accel Speed' 0.5
+
+# Same logic applied to everything else.
+# set_from_resource $term_background background
+# set_from_resource $term_foreground foreground
+# set_from_resource $term_color0     color0
+# set_from_resource $term_color1     color1
+# set_from_resource $term_color2     color2
+# set_from_resource $term_color3     color3
+# set_from_resource $term_color4     color4
+# set_from_resource $term_color5     color5
+# set_from_resource $term_color6     color6
+# set_from_resource $term_color7     color7
+# set_from_resource $term_color8     color8
+# set_from_resource $term_color9     color9
+# set_from_resource $term_color10    color10
+# set_from_resource $term_color11    color11
+# set_from_resource $term_color12    color12
+# set_from_resource $term_color13    color13
+# set_from_resource $term_color14    color14
+# set_from_resource $term_color15    color15
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+#   i3bar_command i3bar
+#	status_command i3status
+	position bottom
+	mode hide
+
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#	tray_output primary
+#	tray_output eDP1
+
+	bindsym button4 nop
+	bindsym button5 nop
+    font Ricty 11
+	strip_workspace_numbers yes
+
+  colors {
+    background #282A36
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+    }
+}
+
+set $fg-color #fdfff1
+set $bg-color #272821
+set $contrast-color #3b3c35
+set $red-color #f82570
+set $green-color #a6e12d
+set $yellow-color #e4db73
+set $orange-color #fc961f
+set $purple-color #ae81ff
+
+# Theme colors
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
