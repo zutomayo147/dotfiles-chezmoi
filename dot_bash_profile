@@ -1,0 +1,13 @@
+#
+# ~/.bash_profile
+#
+export EDITOR=/usr/bin/nvim
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+export QSYS_ROOTDIR="/home/sin/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
