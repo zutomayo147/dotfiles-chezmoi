@@ -1,0 +1,207 @@
+scan_timeout = 10
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$time\
+$vcsh\
+$git_branch\
+$status\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$lua\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$shell\
+$character"""
+[username]
+disabled = true
+# [username]
+# style_user = "white bold"
+# style_root = "black bold"
+# format = "[$user🌱]($style) "
+# disabled = false
+# show_always = true
+[gcloud]
+disabled = true
+
+[cmd_duration]
+# min_time = 1000
+# format = "took [$duration]($style) "
+disabled = true
+
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[hostname]
+# disabled = true
+ssh_only = true
+# prefix = "⟪"
+# suffix = "⟫"
+# [memory_usage]
+# show_percentage = true
+# show_swap = true
+# threshold = -1
+# symbol = " "
+# separator = "/"
+# style = "bold dimmed green"
+
+[time]
+disabled = true # 時刻を表示
+# [time]
+# disabled = false
+# style = "#3f3f3f"
+# format = "\b\b[](fg:#3f8ed1 bg:$style)[$time](bg:$style fg:#d0d0d0)[](fg:$style) "
+
+# [aws]
+# format = "on [$symbol$region]($style) "
+# style = "bold blue"
+# symbol = "🅰 "
+# [aws.region_aliases]
+# ap-southeast-2 = "au"
+# us-east-1 = "va"
+# ap-northeast-1 = "jp"
+
+# シェルプロンプトの間に空行を追加します
+# add_newline = false
+add_newline = true
+
+
+
+# "❯" 記号を "➜" 記号に置き換えます
+[character]                            # 設定しようとしているモジュールの名前は "character" です。
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green) "
+
+# packageモジュールを無効にし、プロンプトから完全に隠します
+[package]
+disabled = true
+
+[git_branch]
+style = "#dda0dd"
+# format = "\b\b[](fg:#3f3f3f bg:$style)[ $symbol$branch ](fg:black bg:$style)[](fg:$style) "
+symbol = " "
+
+[golang]
+symbol = " "
+[java]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[python]
+symbol = " "
+# pyenv_version_name = true
+pyenv_version_name = false
+style = "purple bold"
+pyenv_prefix = ""
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+
+[nodejs]
+format="> Node.js [$symbol($version )]($style)"
+symbol="🍀"
+disabled = false
+
+# [custom.arch]
+# command = "uname -m"
+# when = """ test $(uname -m) = "x86_64" """
+# style = "bold yellow"
+# format = "[$output]($style)"
+
+[status]
+disabled = false
+style = "#d13730"
+symbol = "😨"
+format = "[\\[$symbol $status\\]](fg:$style) "
+
+
+
+[git_state]
+# progress_divider = " of "
+cherry_pick = "🍒 PICKING"
+[git_status]
+#Gitのステータス表示用アイコン
+conflicted = "💥"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🌚"
+stashed = "📦"
+modified = "📝"
+staged = '🔦'
+renamed = "✍"
+deleted = "👋"
+
+# [directory]
+# truncation_length = 3
+# truncate_to_repo = false
+# read_only = " "
+# truncation_symbol = "…/"
+# fish_style_pwd_dir_length = 1
+# style = "#3f8ed1"
+[directory]
+# truncate_to_repo = false
+truncate_to_repo = true
+fish_style_pwd_dir_length = 3
+# style = "#3f8ed1"
+style = "#B0E0E6"
+truncation_length = 3
+# format = "[$path [$read_only](bg:$style fg:red)](bg:$style fg:#f0f0f0)[](fg:$style)"
+# format = "[$path [$read_only](bg:$style fg:red)](bg:$style fg:#f0f0f0)[](fg:$style)"
+
+[docker_context]
+# symbol = " "
+symbol = "🐋"
+format = "via [🐋 $context](blue bold)"
