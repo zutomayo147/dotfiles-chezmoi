@@ -1,8 +1,0 @@
-export DefaultImModule=fcitx
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export QT5_IM_MODULE=fcitx
-export EDITOR=nvim
-export QT_QPA_PLATFORMTHEME=qt5ct
-dunst &
