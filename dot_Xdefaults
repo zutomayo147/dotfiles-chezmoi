@@ -1,0 +1,16 @@
+xterm*faceName:Hack Regular Nerd Font Complete:size=11:antialias=false
+xterm*font:8x13
+xterm*scaleHeight:1.05
+xterm*reverseVideo:on
+XTerm*utf8              : 1
+XTerm*selectToClipboard : true
+XTerm*faceSize          : 10.5
+XTerm*cjkWidth          : true
+XTerm*fontDoublesize    : true
+XTerm*geometry          : 100x30+300+100
+XTerm*scaleHeight       : 1.15XTerm*locale            : true
+xterm*termName: xterm-256color
+XTerm*locale: true
+Xterm*saveLines: 4096
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+xterm*borderWidth: 0
