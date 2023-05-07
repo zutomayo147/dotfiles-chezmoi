@@ -1,0 +1,7 @@
+# 色設定
+--colors=style:bold
+
+# ファイルタイプ追加定義
+# こうすることで、「rg -tweb ~~」で追加したファイル群で検索できる。
+--type-add
+web:*.{html,css,js}*

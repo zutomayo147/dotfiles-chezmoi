@@ -1,0 +1,69 @@
+clear lock
+remove mod1 = Alt_L
+remove shift = Shift_R
+
+
+! Caps lock
+keycode 66 = Eisu_toggle
+
+! Henkan
+keycode 100 = Return
+
+! ESC
+keycode 9 =
+
+! BackSpace
+keycode 22 =
+
+! Enter
+keycode 36 =
+
+! Hiragana
+keycode 101 = BackSpace
+
+! R_Shift
+! keycode = 62 =
+
+! Muhenkan
+keycode 102 = Escape
+
+! End
+! keycode 115 = Escape
+
+! Ctl-R
+keycode 105 =
+
+! keycode 11 = 2 apostrophe
+!
+! keycode 16 = 7 quotedbl
+
+
+! katakana
+! keycode 101 =
+
+! pg dn Overrides
+! keycode 117 = Escape
+
+! delete
+! keycode 119 =
+
+! insert
+keycode 118 =
+! keycode 118 = XF86ScreenSaver
+
+! ! right
+! keycode 114 =
+! ! up
+! keycode 111 =
+! ! down
+! keycode 116 =
+! ! left
+! keycode 113 =
+
+! Alt_L
+keycode 64 = Mode_switch
+
+keycode 43 = h H Left Left
+keycode 44 = j J Down Down
+keycode 45 = k K Up Up
+keycode 46 = l L Right Right
