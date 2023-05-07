@@ -1,0 +1,14 @@
+
+[alsa]
+mixer-element=Master
+
+[audacious]
+shuffle=TRUE
+
+[audgui]
+filesel_path=/home/sin/sync/music
+
+[qtui]
+player_height=1080
+player_width=1920
+playlist_tabs_visible=2
