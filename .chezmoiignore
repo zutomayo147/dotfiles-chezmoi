@@ -1,0 +1,17 @@
+*.txt
+*/*.txt
+backups/
+backups/**
+
+
+QtUi.conf
+.keep
+*.dat
+
+{{- if ne .email "firstname.lastname@company.com" }}
+.company-directory # note that the pattern is not dot_company-directory
+{{- end }}
+
+{{- if ne .email "me@home.org" }}
+.personal-file
+{{- end }}
