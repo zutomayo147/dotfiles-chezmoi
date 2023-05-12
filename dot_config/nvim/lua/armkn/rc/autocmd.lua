@@ -7,6 +7,12 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("WinEnter", { group = MY_GROUP, command = "setlocal cursorline cursorcolumn" })
 autocmd("WinLeave", { group = MY_GROUP, command = "setlocal nocursorline nocursorcolumn" })
 
+-- Insertモードに入ったときにfcitxを英語入力に切り替える
+vim.cmd("autocmd InsertEnter * silent !fcitx-remote -o")
+
+-- Normalモードに戻ったときにfcitxを無効にする
+vim.cmd("autocmd InsertLeave * silent !fcitx-remote -c")
+
 -- shebang が指定されているファイルを保存したら実行可能フラグを付与する
 autocmd("BufWritePost", {
     group = MY_GROUP,
