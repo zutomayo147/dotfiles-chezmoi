@@ -15,6 +15,26 @@ g.sonokai_better_performance = 1
 g.sonokai_transparent_background = 1
 
 
+vim.g.iminsert = 2
+vim.g.imsearch = 2
+vim.g.imcmdline = true
+
+function ImActivate(active)
+  if active then
+    vim.fn.system('fcitx-remote -o')
+  else
+    vim.fn.system('fcitx-remote -c')
+  end
+end
+
+function ImStatus()
+  local output = vim.fn.system('fcitx-remote')
+  return output:sub(1, 1) == '2'
+end
+
+vim.g.imactivatefunc = ImActivate
+vim.g.imstatusfunc = ImStatus
+
 -- Skip builtin plugins
 g.loaded_2html_plugin = 1
 g.loaded_getscript = 1
