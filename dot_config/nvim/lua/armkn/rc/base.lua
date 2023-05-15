@@ -21,9 +21,9 @@ vim.g.imcmdline = true
 
 function ImActivate(active)
   if active then
-    vim.fn.system('fcitx-remote -o')
+    vim.fn.system('fcitx5-remote -o')
   else
-    vim.fn.system('fcitx-remote -c')
+    vim.fn.system('fcitx5-remote -c')
   end
 end
 
