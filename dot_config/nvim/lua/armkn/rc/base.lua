@@ -13,6 +13,21 @@ g.sonokai_better_performance = 1
 -- g.sonokai_current_word = "bold"
 -- "molokaiはhiで透過非対応
 g.sonokai_transparent_background = 1
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_filetypes = {
+    ["*"] = false,
+    ["javascript"] = true,
+    ["typescript"] = true,
+    ["lua"] = false,
+    ["rust"] = true,
+    ["c"] = true,
+    ["c#"] = true,
+    ["c++"] = true,
+    ["go"] = true,
+    ["python"] = true,
+}
+
 
 
 vim.g.iminsert = 2
