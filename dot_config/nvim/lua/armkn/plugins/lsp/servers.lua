@@ -11,7 +11,7 @@ return {
     emmet_ls = {},
     gopls = {},
     html = {},
-    jdtls = {},
+    -- jdtls = {},
     jsonls = {},
     lua_ls = {},
     pyright = { mason = false },
