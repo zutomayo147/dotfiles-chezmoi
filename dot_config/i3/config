@@ -90,8 +90,8 @@ bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 
 # exec --no-startup-id compton -cbm 0.75
 # exec --no-startup-id picom -cbmGC 0.75 --config /home/sin/.config/picom.conf
-# bindsym Print exec gnome-screenshot -i
-bindsym Print exec spectacle
+bindsym Print exec gnome-screenshot -i
+# bindsym Print exec spectacle
 
 # for spectre
 bindsym Ctrl+End exec xinput disable 'SYNA329A:00 06CB:CD4F Touchpad'
