@@ -8,7 +8,7 @@ return {
     { "folke/todo-comments.nvim" },
     { "kana/vim-smartchr" },
     { "thinca/vim-quickrun" },
-    { "github/copilot.vim" },
+    -- { "github/copilot.vim" },
     -- { "huntaka9576/preview-swagger.nvim" },
     -- { "toppair/peek.nvim", run = 'deno task --quiet build:fast'},
     -- { "iamcco/markdown-preview.nvim",  run = function() vim.fn["mkdp#util#install"]() end,},
