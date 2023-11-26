@@ -325,7 +325,7 @@ exec --no-startup-id imwheel
 # exec --no-startup-id slack %U -u
 
 exec --no-startup-id sleep 2.0 && wezterm
-# exec --no-startup-id pulseaudio --start
+exec --no-startup-id pulseaudio --start
 
 # exec --no-startup-id libinput-gestures-setup start
 
