@@ -321,11 +321,11 @@ exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
 exec --no-startup-id imwheel
 # exec --no-startup-id signal-desktop --start-in-tray
 # exec --no-startup-id wire-desktop --minimize
-exec --no-startup-id wire-desktop --hidden
-exec --no-startup-id slack %U -u
+# exec --no-startup-id wire-desktop --hidden
+# exec --no-startup-id slack %U -u
 
 exec --no-startup-id sleep 2.0 && wezterm
-exec --no-startup-id pulseaudio --start
+# exec --no-startup-id pulseaudio --start
 
 # exec --no-startup-id libinput-gestures-setup start
 
