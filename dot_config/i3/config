@@ -245,6 +245,7 @@ assign [class="libreoffice"] $ws2
 
 assign [class="Org.gnome.Nautilus"] $ws3
 assign [class="Slack"] $ws3
+assign [class="Spotify"] $ws3
 assign [class="zoom"] $ws3
 # assign [class="teams-for-linux"] $ws3
 assign [class="Timeshift-gtk"] $ws3
