@@ -1,4 +1,4 @@
-﻿###
+###
 ###  vlc 3.0.18
 ###
 
@@ -3819,7 +3819,8 @@ osd=0
 input-fast-seek=1
 
 # Playback speed (float)
-rate=2.500000
+# rate=2.500000
+rate=1.000000
 
 # Input list (string)
 #input-list=
@@ -4828,4 +4829,3 @@ vod-server=any
 
 # Playlist bookmark 10 (string)
 #bookmark10=
-
