@@ -4648,7 +4648,7 @@ vod-server=any
 #extrashort-jump-size=3
 
 # Short jump length (integer)
-#short-jump-size=10
+short-jump-size=5
 
 # Medium jump length (integer)
 #medium-jump-size=60
